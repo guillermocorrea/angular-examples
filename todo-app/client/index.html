@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="TodoApp">
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ng todo app</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.0/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="vendors/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-controller="TodoCtrl">
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <a href="/" class="navbar-brand"><i class="ion-images"></i> ng-todo-app</a>
+        </ul>
+    </div>
+</div>
+
+<div ng-view></div>
+
+<div class="container">
+    <footer class="footer">
+        Made with <span class="ion-heart" title="heart"></span>, and a shit tone of cool <span class="ion-social-javascript"></span> libraries <span class="ion-social-angular"></span> . <a href="https://github.com/guillermocorrea/angular-examples"><span class="ion-social-github"></span> Source code</a>.
+    </footer>
+</div>
+
+<script src="vendors/underscore/underscore-min.js"></script>
+<script src="vendors/moment/min/moment.min.js"></script>
+<script src="vendors/angular/angular.js"></script>
+<script src="vendors/angular-route/angular-route.js"></script>
+<script src="vendors/angular-messages/angular-messages.js"></script>
+<script src="vendors/sweetalert/dist/sweetalert.min.js"></script>
+<script src="app.js"></script>
+<script src="services/todoService.js"></script>
+<script src="controllers/todo.js"></script>
+</body>
+</html>

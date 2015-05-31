@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="center-form panel">
+        <div class="panel-body">
+            <h4 class="text-center"><i class="ion-android-clipboard"></i> Todo list</h4>
+            <form name="todoForm" novalidate>
+                <div class="form-group input-group has-feedback" ng-class="{ 'has-error': todoForm.todo.$invalid && todoForm.todo.$dirty }">
+                    <input class="form-control input-lg" type="text" name="todo" ng-model="todo" placeholder="Todo" required autofocus>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-lg" ng-disabled="todoForm.$invalid" ng-click="add(todo)" type="button"> Add!</button>
+                    </span>
+                    <!--<div class="help-block" ng-if="todoForm.todo.$dirty" ng-messages="todoForm.todo.$error">
+                        <div ng-message="required">Please enter a todo</div>
+                    </div>-->
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="center-form panel" ng-if="todos.length == 0">
+        <div class="panel-body">
+            <h4 class="text-center"><i class="ion-android-clipboard"></i> There are no todo items.</h4>
+        </div>
+    </div>
+
+    <table class="table table-striped" ng-if="todos.length > 0">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Done?</th>
+            <th>Created</th>
+            <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in todos track by $index" ng-class="{ 'line-through': item.done }">
+            <th scope="row">{{$index + 1}}</th>
+            <td>{{item.title}}</td>
+            <td><input type="checkbox" ng-model="item.done" /></td>
+            <td>{{formatDate(item.created)}}</td>
+            <td><button type="button" class="btn btn-danger" ng-click="remove(item.id)">Remove</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
